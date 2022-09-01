@@ -1,10 +1,10 @@
-def piece_of(line: str):
+def next_piece_of(line: str):
     if line[0] == '"':
         ind = line[1:].find('"')
-        yield line[ind + 3:]
+        return line[ind + 3:]
     else:
         ind = line.find(",")
-        yield line[ind + 1:]
+        return line[ind + 1:]
 
 
 def read_and_replace():
@@ -14,7 +14,7 @@ def read_and_replace():
     for line in file:
         outline = ""
         saved = line
-        while line := next(piece_of(line)):
+        while line := next_piece_of(line):
             outline += f"{saved[:len(saved)-len(line)].strip(',')}\t"
             saved = line
         outline += f"{saved[:len(saved)-len(line)].strip(',')}\t"
