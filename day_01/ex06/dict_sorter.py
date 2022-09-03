@@ -24,8 +24,7 @@ def run():
     data = {}
     for key, value in list_of_tuples:
         data[key] = int(value)
-    data = sorted(data, key=lambda key: (-data[key], key))
-    for key in data:
+    for key in sorted(data, key=lambda key: (-data[key], key)):
         print(key)
 
 
