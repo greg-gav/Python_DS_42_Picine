@@ -18,10 +18,11 @@ def run():
     }
     if len(sys.argv) != 2:
         sys.exit(1)
-    if sys.argv[1].capitalize() not in COMPANIES.keys():
-        print("Unknown company")
+    if sys.argv[1].upper() not in COMPANIES.values():
+        print("Unknown ticker")
         sys.exit(1)
-    print(STOCKS[COMPANIES[sys.argv[1].capitalize()]])
+    key = list(COMPANIES.keys())[list(COMPANIES.values()).index(sys.argv[1].upper())]
+    print(key, STOCKS[sys.argv[1].upper()])
 
 
 if __name__ == "__main__":
