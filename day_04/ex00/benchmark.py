@@ -2,12 +2,13 @@
 from timeit import Timer
 
 def comp(emails):
-    lst = [x for x in emails]
+    lst = [x for x in emails if x.endswith("@gmail.com")]
 
 def loop(emails):
     lst = []
     for email in emails:
-        lst.append(email)
+        if email.endswith("@gmail.com"):
+            lst.append(email)
 
 def run():
     emails = [
