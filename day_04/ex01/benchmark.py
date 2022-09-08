@@ -12,8 +12,9 @@ def loop(emails):
             lst.append(email)
 
 def maps(emails):
-    lst = list(map(lambda x: x if x.endswith("@gmail.com") else None, emails))
-    print(lst)
+    lst = []
+    [*map(lambda x: lst.append(x) if x.endswith("@gmail.com") else True, emails)]
+
 
 
 def run():
