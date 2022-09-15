@@ -2,3 +2,7 @@ https://api.hh.ru/
 curl -k -H 'User-Agent: api-test-agent' 'https://api.hh.ru/vacancies'
 curl -k -H 'User-Agent: api-test-agent' 'https://api.hh.ru/vacancies?text=data%20scientist'
 curl -k -H 'User-Agent: api-test-agent' 'https://api.hh.ru/vacancies?text=data%20scientist&per_page=20&page=0' | jq "."
+curl --data-urlencode "text=data scientist"  --data-urlencode "per_page=20" --data-urlencode "page=0" --get -k -H 'User-Agent: api-test-agent' 'https://api.hh.ru/vacancies' | jq "."
+
+
+
