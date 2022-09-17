@@ -51,7 +51,6 @@ class Research:
         self.logger.info(msg=f"Sending msg to Slack")
         msg = json.dumps({"text" : message})
         r = requests.post(url=webhook_url, headers=webhook_header, data=msg)
-        print (r.status_code, r.headers, r.request)
 
     class Calculations:
         def __init__(self, data):
