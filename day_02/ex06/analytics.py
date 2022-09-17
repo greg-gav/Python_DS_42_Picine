@@ -1,7 +1,9 @@
-from asyncio.log import logger
 import sys
-from random import randint
 import logging
+import requests
+import json
+
+from random import randint
 
 class Research:
 
@@ -43,6 +45,13 @@ class Research:
             print(f"Error caught: {e}")
             self._logger.error(msg="Failed to read file")
             sys.exit(1)
+
+    def slack_send(self, message):
+        from config import webhook_header, webhook_url
+        self.logger.info(msg=f"Sending msg to Slack")
+        msg = json.dumps({"text" : message})
+        r = requests.post(url=webhook_url, headers=webhook_header, data=msg)
+        print (r.status_code, r.headers, r.request)
 
     class Calculations:
         def __init__(self, data):
