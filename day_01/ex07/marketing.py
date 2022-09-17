@@ -1,8 +1,8 @@
 import sys
 
 
-def call_center(clients, participants, recipients):
-    to_call = (set(clients) | set(participants)) - set(recipients)
+def call_center(clients, recipients, participants=None):
+    to_call = set(clients)  - set(recipients)
     print(list(to_call))
 
 
@@ -45,7 +45,9 @@ def run():
     if len(sys.argv) != 2:
         exit(1)
     globals()[f"{sys.argv[1]}"](
-        clients=clients, participants=participants, recipients=recipients
+        clients=clients,
+        participants=participants,
+        recipients=recipients
     )
 
 
