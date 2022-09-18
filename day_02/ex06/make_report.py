@@ -18,7 +18,6 @@ def make_report():
         research.slack_send("The report hasn’t been created due to an error")
 
 
-
 if __name__ == "__main__":
     try:
         make_report()

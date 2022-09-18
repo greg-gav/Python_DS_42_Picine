@@ -27,8 +27,8 @@ def run():
     if len(sys.argv) != 2:
         sys.exit(1)
     research = Research(sys.argv[1])
-    data = research.file_reader()
-    print(data)
-    
+    print(research.file_reader())
+
+
 if __name__ == "__main__":
     run()

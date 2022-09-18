@@ -60,7 +60,7 @@ class Research:
             return returned
 
         def predict_last(self):
-            return self._data[len(self._data) - 1]
+            return self._data[-1]
 
 
 def run():
@@ -82,4 +82,7 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    try:
+        run()
+    except Exception as e:
+        print(f"Error caught: {e}")

@@ -15,4 +15,7 @@ def make_report():
 
 
 if __name__ == "__main__":
-    make_report()
+    try:
+        make_report()
+    except Exception as e:
+        print(f"Error caught: {e}")

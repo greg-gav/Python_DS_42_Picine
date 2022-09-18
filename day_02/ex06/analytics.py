@@ -87,7 +87,7 @@ class Research:
 
         def predict_last(self):
             self._logger.info(msg="Getting last prediction from data")
-            return self._data[len(self._data) - 1]
+            return self._data[-1]
 
         def save_file(self, data, name, format):
             with open (f'{name}.{format}', 'w') as file:
