@@ -29,8 +29,6 @@ def run():
     loop_t = Timer(lambda: loop(emails))
     comp_t = Timer(lambda: comp(emails))
     comp_m = Timer(lambda: maps(emails))
-    print("Running comparison... please wait")
-    maps(emails)
     times = {
         loop_t.timeit(number=num) : "it is better to use a loop",
         comp_t.timeit(number=num) : "it is better to use a list comprehension",

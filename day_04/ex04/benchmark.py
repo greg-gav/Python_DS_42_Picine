@@ -1,6 +1,7 @@
 #!python3
-from timeit import Timer
 import random
+
+from timeit import Timer
 from collections import Counter
 
 

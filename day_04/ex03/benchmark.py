@@ -9,7 +9,6 @@ def sum_loop(up_to):
     for i in range(1, up_to + 1):
         sum += i * i
 
-
 def sum_reduce(up_to):
     sum = reduce(lambda x, y: x + y * y, range(1, up_to + 1))
 

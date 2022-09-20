@@ -21,7 +21,6 @@ def run():
     num = 90000000
     loop_t = Timer(lambda: loop(emails))
     comp_t = Timer(lambda: comp(emails))
-    print("Running comparison... please wait")
     times = [loop_t.timeit(number=num), comp_t.timeit(number=num)]
     if times[0] < times[1]:
         print ("it is better to use a loop")

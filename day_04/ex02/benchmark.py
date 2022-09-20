@@ -6,7 +6,6 @@ from timeit import Timer
 def comp(emails):
     lst = [x for x in emails if x.endswith("@gmail.com")]
 
-
 def loop(emails):
     lst = []
     for email in emails:
